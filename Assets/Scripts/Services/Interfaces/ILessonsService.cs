@@ -2,7 +2,7 @@
 
 namespace SmartTek.ToolSchool.Services.Interfaces
 {
-    internal interface ILessonsService
+    public interface ILessonsService
     {
         void Launch<IToolLesson>();
         T GetLessonInstace<T>() where T : IToolLesson;

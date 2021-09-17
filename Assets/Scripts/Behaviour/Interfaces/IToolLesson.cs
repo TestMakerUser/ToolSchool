@@ -9,5 +9,7 @@ namespace SmartTek.ToolSchool.Behaviour.Intefaces
         IReadOnlyList<BaseTool> ToolsPrefabs { get; }
         string Name { get; }
         string Description { get; }
+
+        void LaunchLesson(LessonContext context);
     }
 }
