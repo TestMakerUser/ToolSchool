@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/VRTK/Examples/[004 - Locomotion] Teleporting.unity
+    guid: 6e8d0241c1297f3498e571ad36aa813f
   m_configObjects: {}
