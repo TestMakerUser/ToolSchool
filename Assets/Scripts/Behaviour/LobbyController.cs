@@ -1,23 +1,29 @@
 ﻿using SmartTek.ToolSchool.Helpers;
-using System.Collections;
-using System.Collections.Generic;
+using SmartTek.ToolSchool.Services.Interfaces;
 using UnityEngine;
 
 namespace SmartTek.ToolSchool.Behaviour
 {
     public class LobbyController : MonoBehaviour
     {
+        private ILessonsService lessonsService;
+
         private void Start()
         {
-            
+            lessonsService = ServicesReferences.LessonsService;
         }
 
+#if UNITY_EDITOR
         private void OnGUI()
         {
-            if(GUILayout.Button("Load workshop"))
+            foreach(var lesson in lessonsService.LessonsInstances)
             {
-                ServicesReferences.SceneService.LoadScene(Services.SceneService.SceneType.Workshop, null);
-            }
+                if(GUILayout.Button(lesson.Name))
+                {
+                    lessonsService.Launch(lesson);
+                }
+            }    
         }
+#endif
     }
 }

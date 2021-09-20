@@ -1,4 +1,5 @@
-﻿using SmartTek.ToolSchool.Behaviour.Intefaces;
+﻿using SmartTek.ToolSchool.Behaviour.Interfaces;
+using SmartTek.ToolSchool.Helpers;
 using SmartTek.ToolSchool.Services.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,11 @@ namespace SmartTek.ToolSchool.Services
     {
         public static ILessonsService Instance { get; private set; }
 
+        public IReadOnlyList<IToolLesson> LessonsInstances { get; private set; }
+
         private IToolLesson currentLesson;
-        private IReadOnlyList<IToolLesson> lessonsInstances;
+
+        private bool isLoadingNow;
 
         private void Awake()
         {
@@ -21,7 +25,7 @@ namespace SmartTek.ToolSchool.Services
 
         private void InitializeInstances()
         {
-            lessonsInstances = GetComponentsInChildren<MonoBehaviour>()
+            LessonsInstances = GetComponentsInChildren<MonoBehaviour>()
                 .Where(i => i is IToolLesson)
                 .Select(i => i as IToolLesson)
                 .ToList();
@@ -29,13 +33,34 @@ namespace SmartTek.ToolSchool.Services
 
         public T GetLessonInstace<T>() where T : IToolLesson
         {
-            return (T)lessonsInstances.FirstOrDefault(i => i is T);
+            return (T)LessonsInstances.FirstOrDefault(i => i is T);
         }
 
-        public void Launch<IToolLesson>()
+        public void Launch<T>() where T : IToolLesson
         {
-            //todo: dispose
-            throw new System.NotImplementedException();
+            Launch(GetLessonInstace<T>());
+        }
+
+        public void Launch(IToolLesson lessonInstance)
+        {
+            if (isLoadingNow)
+            {
+                throw new System.InvalidOperationException("Another lesson is loading now");
+            }
+
+            isLoadingNow = true;
+            if (currentLesson != null)
+            {
+                currentLesson.Dispose();
+            }
+            currentLesson = lessonInstance;
+            ServicesReferences.SceneService.LoadScene(SceneService.SceneType.Workshop, OnWorkshopLoaded);
+        }
+
+        private void OnWorkshopLoaded()
+        {
+            currentLesson.LaunchLesson(null);
+            isLoadingNow = false;
         }
     }
 }

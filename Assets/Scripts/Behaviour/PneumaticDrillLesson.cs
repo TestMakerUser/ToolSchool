@@ -1,20 +1,20 @@
-﻿using SmartTek.ToolSchool.Behaviour.Intefaces;
+﻿using SmartTek.ToolSchool.Behaviour.Interfaces;
 using SmartTek.ToolSchool.Components;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace SmartTek.ToolSchool.Behaviour
 {
-    public class PneumaticDrillLesson : MonoBehaviour, IToolLesson
+    public class PneumaticDrillLesson : BaseToolLesson
     {
         [SerializeField]
         private BaseTool[] _toolsPrefabs;
 
-        public IReadOnlyList<BaseTool> ToolsPrefabs => _toolsPrefabs;
+        public override IReadOnlyList<BaseTool> ToolsPrefabs => _toolsPrefabs;
 
-        public string Name => "Pneumatic drill lesson";
+        public override string Name => "Pneumatic drill lesson";
 
-        public string Description => string.Empty;
+        public override  string Description => string.Empty;
 
         public void Dispose()
         {

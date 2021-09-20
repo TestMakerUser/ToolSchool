@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SmartTek.ToolSchool.Behaviour.Intefaces
+namespace SmartTek.ToolSchool.Behaviour.Interfaces
 {
     public interface IToolLesson : IDisposable
     {

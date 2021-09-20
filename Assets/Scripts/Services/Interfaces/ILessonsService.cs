@@ -1,10 +1,14 @@
-﻿using SmartTek.ToolSchool.Behaviour.Intefaces;
+﻿using SmartTek.ToolSchool.Behaviour.Interfaces;
+using System.Collections.Generic;
 
 namespace SmartTek.ToolSchool.Services.Interfaces
 {
     public interface ILessonsService
     {
-        void Launch<IToolLesson>();
+        IReadOnlyList<IToolLesson> LessonsInstances { get; }
+
+        void Launch<T>() where T : IToolLesson;
         T GetLessonInstace<T>() where T : IToolLesson;
+        void Launch(IToolLesson lessonInstance);
     }
 }
