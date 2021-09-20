@@ -1,9 +1,7 @@
 {
-    "name": "ToolSchool",
+    "name": "Oculus",
     "references": [
-        "VRTK",
-        "Oculus.VR",
-        "Unity.TextMeshPro"
+        "Oculus.VR"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
