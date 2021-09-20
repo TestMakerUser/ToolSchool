@@ -10,5 +10,6 @@ namespace SmartTek.ToolSchool.Services.Interfaces
         void Launch<T>() where T : IToolLesson;
         T GetLessonInstace<T>() where T : IToolLesson;
         void Launch(IToolLesson lessonInstance);
+        void FinishAndReturnToLobby();
     }
 }

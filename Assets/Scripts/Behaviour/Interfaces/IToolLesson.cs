@@ -9,6 +9,7 @@ namespace SmartTek.ToolSchool.Behaviour.Interfaces
         IReadOnlyList<BaseTool> ToolsPrefabs { get; }
         string Name { get; }
         string Description { get; }
+        bool IsLaunching { get; }
 
         void LaunchLesson(LessonContext context);
     }

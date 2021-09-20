@@ -1,4 +1,5 @@
 ﻿using SmartTek.ToolSchool.Components;
+using SmartTek.ToolSchool.Helpers;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,14 +16,33 @@ namespace SmartTek.ToolSchool.Behaviour.Interfaces
 
         protected IReadOnlyList<BaseTool> _instantiatedTools;
 
+        public bool IsLaunching { get; protected set; }
+
+#if UNITY_EDITOR
+        private void OnGUI()
+        {
+            if(!IsLaunching)
+            {
+                return;
+            }
+            
+            if(GUILayout.Button("Finish and return to lobby"))
+            {
+                ServicesReferences.LessonsService.FinishAndReturnToLobby();
+            }
+        }
+#endif
+
         public virtual void Dispose()
         {
             DestroyTools();
+            IsLaunching = false;
         }
 
         public virtual void LaunchLesson(LessonContext context)
         {
             InstantiateTools();
+            IsLaunching = true;
         }
 
         protected virtual void InstantiateTools()

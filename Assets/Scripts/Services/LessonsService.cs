@@ -57,6 +57,17 @@ namespace SmartTek.ToolSchool.Services
             ServicesReferences.SceneService.LoadScene(SceneService.SceneType.Workshop, OnWorkshopLoaded);
         }
 
+        public void FinishAndReturnToLobby()
+        {
+            if(currentLesson == null)
+            {
+                throw new System.InvalidOperationException("Current lesson is null");
+            }
+
+            currentLesson.Dispose();
+            ServicesReferences.SceneService.LoadScene(SceneService.SceneType.Lobby, null);
+        }
+
         private void OnWorkshopLoaded()
         {
             currentLesson.LaunchLesson(null);
