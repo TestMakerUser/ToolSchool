@@ -1,4 +1,4 @@
-﻿using SmartTek.ToolSchool.Services.Intefaces;
+﻿using SmartTek.ToolSchool.Services.Interfaces;
 using System;
 using System.Collections;
 using UnityEngine;

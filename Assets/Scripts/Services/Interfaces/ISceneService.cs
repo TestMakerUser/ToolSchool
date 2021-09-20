@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SmartTek.ToolSchool.Services.Intefaces
+namespace SmartTek.ToolSchool.Services.Interfaces
 {
     public interface ISceneService
     {
