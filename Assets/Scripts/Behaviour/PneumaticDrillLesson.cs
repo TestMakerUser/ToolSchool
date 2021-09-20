@@ -7,9 +7,12 @@ namespace SmartTek.ToolSchool.Behaviour
 {
     public class PneumaticDrillLesson : MonoBehaviour, IToolLesson
     {
-        public IReadOnlyList<BaseTool> ToolsPrefabs => throw new System.NotImplementedException();
+        [SerializeField]
+        private BaseTool[] _toolsPrefabs;
 
-        public string Name => "Pneumatic drill";
+        public IReadOnlyList<BaseTool> ToolsPrefabs => _toolsPrefabs;
+
+        public string Name => "Pneumatic drill lesson";
 
         public string Description => string.Empty;
 

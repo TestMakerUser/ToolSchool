@@ -34,6 +34,7 @@ namespace SmartTek.ToolSchool.Services
 
         public void Launch<IToolLesson>()
         {
+            //todo: dispose
             throw new System.NotImplementedException();
         }
     }
