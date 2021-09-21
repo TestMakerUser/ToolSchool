@@ -1,0 +1,15 @@
+{
+    "name": "VRTK",
+    "references": [
+        "Oculus.VR",
+        "Oculus"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

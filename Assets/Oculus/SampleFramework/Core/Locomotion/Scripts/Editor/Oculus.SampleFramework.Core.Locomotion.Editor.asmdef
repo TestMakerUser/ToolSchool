@@ -1,0 +1,16 @@
+{
+    "name": "Oculus.SampleFramework.Core.Locomotion.Editor",
+    "references": [
+        "Oculus"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

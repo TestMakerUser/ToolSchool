@@ -1,3 +1,16 @@
-﻿{
-	"name": "ToolSchool"
+{
+    "name": "ToolSchool",
+    "references": [
+        "VRTK",
+        "Oculus.VR",
+        "Unity.TextMeshPro"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
 }
