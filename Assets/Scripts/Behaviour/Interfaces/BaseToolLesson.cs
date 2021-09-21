@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace SmartTek.ToolSchool.Behaviour.Interfaces
 {
+    /// <summary>
+    /// Base implementation of lesson - storing tools prefabs, instantiation and disposing.
+    /// </summary>
     public abstract class BaseToolLesson : MonoBehaviour, IToolLesson
     {
         public virtual IReadOnlyList<BaseTool> ToolsPrefabs => throw new System.NotImplementedException();
@@ -21,12 +24,12 @@ namespace SmartTek.ToolSchool.Behaviour.Interfaces
 #if UNITY_EDITOR
         private void OnGUI()
         {
-            if(!IsLaunching)
+            if (!IsLaunching)
             {
                 return;
             }
-            
-            if(GUILayout.Button("Finish and return to lobby"))
+
+            if (GUILayout.Button("Finish and return to lobby"))
             {
                 ServicesReferences.LessonsService.FinishAndReturnToLobby();
             }
@@ -35,6 +38,7 @@ namespace SmartTek.ToolSchool.Behaviour.Interfaces
 
         public virtual void Dispose()
         {
+            StopAllCoroutines();
             DestroyTools();
             IsLaunching = false;
         }
@@ -63,6 +67,11 @@ namespace SmartTek.ToolSchool.Behaviour.Interfaces
             }
 
             _instantiatedTools = null;
+        }
+
+        protected virtual T GetToolInstance<T>() where T : BaseTool
+        {
+            return _instantiatedTools.First(t => { Debug.Log(t.name); return t is T; }) as T;
         }
     }
 }
