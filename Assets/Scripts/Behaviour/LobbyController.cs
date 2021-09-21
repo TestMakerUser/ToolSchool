@@ -1,8 +1,8 @@
 ﻿using SmartTek.ToolSchool.Behaviour.Interfaces;
 using SmartTek.ToolSchool.Helpers;
 using SmartTek.ToolSchool.Services.Interfaces;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SmartTek.ToolSchool.Behaviour
 {
@@ -11,15 +11,15 @@ namespace SmartTek.ToolSchool.Behaviour
         private ILessonsService lessonsService;
 
         [SerializeField]
-        private BezierPointer _buttonQuit;
+        private Button _buttonQuit;
         [SerializeField]
         private Transform _lessonsParent;
         [SerializeField]
-        private BezierPointer _buttonPrefab;
+        private Button _buttonPrefab;
 
         private void Awake()
         {
-            _buttonQuit.SetActionOnClick(OnButtonQuitClick);
+            _buttonQuit.onClick.AddListener(OnButtonQuitClick);
         }
 
         private void Start()
@@ -47,8 +47,8 @@ namespace SmartTek.ToolSchool.Behaviour
             {
                 var closureLesson = lesson;
                 var button = Instantiate(_buttonPrefab, _lessonsParent, false);
-                button.SetActionOnClick(() => OnButtonStartLessonClick(closureLesson));
-                button.GetComponentInChildren<TMP_Text>().text = lesson.Name;
+                button.onClick.AddListener(() => OnButtonStartLessonClick(closureLesson));
+                button.GetComponentInChildren<Text>().text = lesson.Name;
             }
         }
 
