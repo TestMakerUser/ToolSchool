@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 645390372}
   - component: {fileID: 645390373}
   m_Layer: 0
-  m_Name: PneumaticDrillLesson
+  m_Name: ElectricDrillLesson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,9 +243,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b865f8cdf240caa4d95d1b0cfb748a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lessonName: Electric Drill Lesson
   _toolsPrefabs:
-  - {fileID: 7799930988743366636, guid: f27c91c14b7343040be470d530dba4a9, type: 3}
-  - {fileID: 8440373058184296939, guid: 63431b3afeef3364280e65c401e5e1bb, type: 3}
+  - {fileID: 222164492640892178, guid: c8e664a8ce886ff40b18967e437a8196, type: 3}
+  - {fileID: 1459342245308662408, guid: 63431b3afeef3364280e65c401e5e1bb, type: 3}
+  - {fileID: 6978041893440237881, guid: 64bb33b0cfe79fc44a42448e7006a669, type: 3}
+  _environment: {fileID: 4131495494547753714, guid: b080ba4560a5d7e44a2d4d5dcce79a07,
+    type: 3}
+  _screwPrefab: {fileID: 1586727497342891041, guid: 4f53f0f231245ab40b7da6c529a486c7,
+    type: 3}
 --- !u!1 &1575529617
 GameObject:
   m_ObjectHideFlags: 0

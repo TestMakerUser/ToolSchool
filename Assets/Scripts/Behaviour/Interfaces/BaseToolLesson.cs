@@ -64,5 +64,10 @@ namespace SmartTek.ToolSchool.Behaviour.Interfaces
 
             _instantiatedTools = null;
         }
+
+        protected virtual T GetToolInstance<T>() where T : BaseTool
+        {
+            return _instantiatedTools.First(t => { Debug.Log(t.name); return t is T; }) as T;
+        }
     }
 }
