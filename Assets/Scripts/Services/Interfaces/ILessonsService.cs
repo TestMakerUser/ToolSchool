@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace SmartTek.ToolSchool.Services.Interfaces
 {
+    /// <summary>
+    /// Switching between different lessons and storaging.
+    /// </summary>
     public interface ILessonsService
     {
         IReadOnlyList<IToolLesson> LessonsInstances { get; }

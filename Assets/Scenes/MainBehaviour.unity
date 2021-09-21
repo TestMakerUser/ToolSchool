@@ -250,8 +250,11 @@ MonoBehaviour:
   - {fileID: 6978041893440237881, guid: 64bb33b0cfe79fc44a42448e7006a669, type: 3}
   _environment: {fileID: 4131495494547753714, guid: b080ba4560a5d7e44a2d4d5dcce79a07,
     type: 3}
-  _screwPrefab: {fileID: 1586727497342891041, guid: 4f53f0f231245ab40b7da6c529a486c7,
+  _screwPrefab: {fileID: 2228735662955289581, guid: 4f53f0f231245ab40b7da6c529a486c7,
     type: 3}
+  _completePopupPrefab: {fileID: 5146521510229503018, guid: b55ab92c1c6323b40bb6ff52bc818f94,
+    type: 3}
+  _delayToFinish: 5
 --- !u!1 &1575529617
 GameObject:
   m_ObjectHideFlags: 0

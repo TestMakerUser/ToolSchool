@@ -4535,7 +4535,7 @@ MonoBehaviour:
   activeScriptingDefineSymbolsWithoutSDKClasses: []
   scriptAliasLeftController: {fileID: 441503569}
   scriptAliasRightController: {fileID: 2122170357}
-  autoManageVRSettings: 1
+  autoManageVRSettings: 0
   autoLoadSetup: 1
   setups:
   - {fileID: 317434142}
